@@ -1,6 +1,6 @@
 use rand::distributions::Distribution;
 
-use super::cpu::{CPU, VIDEO_HEIGHT, VIDEO_WIDTH, FONTSET_START_ADDRESS};
+use super::{CPU, VIDEO_HEIGHT, VIDEO_WIDTH, FONTSET_START_ADDRESS};
 
 impl CPU {
     #[allow(non_snake_case)]

@@ -3,22 +3,24 @@ use std::path::Path;
 use std::fs::File;
 use rand::{distributions::Uniform, rngs::ThreadRng};
 
+pub mod opcodes;
+
 pub const VIDEO_WIDTH: usize = 64;
 pub const VIDEO_HEIGHT: usize = 32;
 pub struct CPU {
-    pub(super) registers: [u8; 16],
-    pub(super) memory: [u8; 4096],
-    pub(super) index: usize,
-    pub(super) pc: usize,
-    pub(super) stack: [u16; 16],
-    pub(super) sp: usize,
-    pub(super) dt: u8,
-    pub(super) st: u8,
-    pub(super) keypad: [u8; 16],
-    pub(super) video: [u32; VIDEO_WIDTH * VIDEO_HEIGHT],
-    pub(super) opcode: u16,
-    pub(super) rng: ThreadRng,
-    pub(super) rand_dist: Uniform<u8>,
+    registers: [u8; 16],
+    memory: [u8; 4096],
+    index: usize,
+    pc: usize,
+    stack: [u16; 16],
+    sp: usize,
+    dt: u8,
+    st: u8,
+    keypad: [u8; 16],
+    video: [u32; VIDEO_WIDTH * VIDEO_HEIGHT],
+    opcode: u16,
+    rng: ThreadRng,
+    rand_dist: Uniform<u8>,
 }
 
 const START_ADDRESS: usize = 0x200;
